@@ -45,7 +45,7 @@ jobs:
             DB_USERNAME: ${{ secrets.DB_USERNAME }}
             DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-            ECR_REPOSITORY: employee_ShaunG
+            ECR_REPOSITORY: employee_demo
             IMAGE_TAG: team2-api
 
             run: |
