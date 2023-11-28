@@ -45,9 +45,9 @@ jobs:
             DB_USERNAME: ${{ secrets.DB_USERNAME }}
             DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-            ECR_REPOSITORY: employee_demo
+            ECR_REPOSITORY: employee_ShaunG
             IMAGE_TAG: team2-api
 
             run: |
               docker build --build-arg DB_HOST=${DB_HOST} DB_NAME=${DB_NAME} DB_USERNAME=${DB_USERNAME} DB_PASSWORD=${DB_USERNAME} -t login-ecr.outputs.registry/employee_demo:team2-api .
-              docker push login-ecr.outputs.registry/employee_demo:team2-api
+              docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
